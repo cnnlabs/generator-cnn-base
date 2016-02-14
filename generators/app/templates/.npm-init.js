@@ -42,40 +42,42 @@ var pack = package; // eslint-disable-line
     'use strict';
 
     const fs = require('fs'),
-        npa = require('npm-package-arg'),
-        validateName = require('validate-npm-package-name'),
+        // npa = require('npm-package-arg'),
+        // validateName = require('validate-npm-package-name'),
         description = pack.description || '',
         keywords = 'cnn cnnlabs',
         scope = config.get('scope');
 
-    let name = pack.name || basename,
-        spec = npa(name);
+    let name = pack.name || basename;
+        // spec = npa(name);
 
-    if (scope) {
-        if (scope.charAt(0) !== '@') {
-            scope = `@${scope}`;
-        }
+    // if (scope) {
+    //     if (scope.charAt(0) !== '@') {
+    //         scope = `@${scope}`;
+    //     }
+    //
+    //     if (spec.scope) {
+    //         name = `${scope}/${spec.name.split('/')[1]}`;
+    //     } else {
+    //         name = `${scope}/${name}`;
+    //     }
+    // }
 
-        if (spec.scope) {
-            name = `${scope}/${spec.name.split('/')[1]}`;
-        } else {
-            name = `${scope}/${name}`;
-        }
-    }
+    // exports.name = yes ? name : prompt('Package name (should match the repository name)', name, function (data) {
+    //     const its = validateName(data),
+    //         errors = (its.errors || []).concat(its.warnings || []),
+    //         er = new Error(`Sorry, ${errors.join(' and ')}.`);
+    //
+    //     if (its.validForNewPackages) {
+    //         return data;
+    //     }
+    //
+    //     er.notValid = true;
+    //
+    //     return er;
+    // });
 
-    exports.name = yes ? name : prompt('Package name (should match the repository name)', name, function (data) {
-        const its = validateName(data),
-            errors = (its.errors || []).concat(its.warnings || []),
-            er = new Error(`Sorry, ${errors.join(' and ')}.`);
-
-        if (its.validForNewPackages) {
-            return data;
-        }
-
-        er.notValid = true;
-
-        return er;
-    });
+    exports.name = yes ? name : prompt('Package name (should match repository name)', name);
 
     exports.description = yes ? description : prompt('Package description', description);
 
