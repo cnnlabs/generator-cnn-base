@@ -1,8 +1,8 @@
 {
   "name": "generator-cnn-base",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "CNN Base Package Generator",
-  "main": "generators/base/index.js",
+  "main": "generators/app/index.js",
   "directories": {
     "test": "./test"
   },
