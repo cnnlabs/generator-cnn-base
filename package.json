@@ -1,13 +1,13 @@
 {
   "name": "generator-cnn-base",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "CNN Base Package Generator",
-  "main": "",
+  "main": "generators/base/index.js",
   "directories": {
     "test": "./test"
   },
   "files": [
-    "generators/base"
+    "generators/app"
   ],
   "scripts": {
     "generate-authors": "tools/generate-authors.sh",
@@ -25,7 +25,9 @@
   "engines": {
     "node": ">=5.6.0"
   },
-  "dependencies": {},
+  "dependencies": {
+    "yeoman-generator": "0.22.5"
+  },
   "devDependencies": {
     "changelog-maker": "2.2.0",
     "esdoc": "0.4.4",
