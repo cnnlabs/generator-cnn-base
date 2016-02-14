@@ -2,6 +2,7 @@
 
 const generators = require('yeoman-generator');
 
+let foregoSomeValidation = false;
 
 /**
  * Validates that a string is a valid POSIX.1-2013 3.92 character string.
@@ -52,6 +53,10 @@ function validateFilename(input) {
  * Will either be true, or a string.  If it is a string, validation failed.
  */
 function validateRepositoryName(input) {
+    if (foregoSomeValidation) {
+        return true;
+    }
+
     let isValidFilename = validateFilename(input);
 
     if (isValidFilename !== true) {
@@ -95,6 +100,7 @@ module.exports = generators.Base.extend({
     constructor: function () {
         generators.Base.apply(this, arguments);
         this.option('extend');
+        this.option('forego');
     },
 
     initializing: {
@@ -102,6 +108,10 @@ module.exports = generators.Base.extend({
             if (this.options.extend) {
                 this.log(`Extending cnn:base with ${this.options.extend}`);
                 this.composeWith(this.options.extend);
+            }
+
+            if (this.options.forego) {
+                foregoSomeValidation = true;
             }
         }
     },
@@ -147,7 +157,6 @@ module.exports = generators.Base.extend({
                         message: 'Git email',
                         default: this.user.git.email(),
                         validate: validateCharacterString
-
                     },
                     {
                         type: 'input',
