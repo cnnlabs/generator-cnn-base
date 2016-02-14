@@ -1,4 +1,4 @@
 .c9
-.idea
-Dockerfile
+docs
 node_modules
+npm-debug.log
