@@ -1,13 +1,13 @@
 {
   "name": "generator-cnn-base",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "CNN Base Package Generator",
-  "main": "generators/app/index.js",
+  "main": "generators/base/index.js",
   "directories": {
     "test": "./test"
   },
   "files": [
-    "generators/app"
+    "generators/base"
   ],
   "scripts": {
     "generate-authors": "tools/generate-authors.sh",
