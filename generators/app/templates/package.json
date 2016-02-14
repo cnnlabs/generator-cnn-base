@@ -2,7 +2,6 @@
   "name": "<%= REPOSITORY_NAME %>",
   "version": "0.1.0",
   "description": "<%= PROJECT_NAME %>",
-  "preferGlobal": true,
   "main": "",
   "directories": {
   },

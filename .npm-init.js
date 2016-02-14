@@ -45,7 +45,7 @@ var pack = package; // eslint-disable-line
         // npa = require('npm-package-arg'),
         // validateName = require('validate-npm-package-name'),
         description = pack.description || '',
-        keywords = 'cnn cnnlabs',
+        keywords = pack.keywords.join(' ') || 'cnn cnnlabs',
         scope = config.get('scope');
 
     let name = pack.name || basename;

@@ -106,7 +106,7 @@ module.exports = generators.Base.extend({
     initializing: {
         templates: function () {
             if (this.options.extend) {
-                this.log(`Extending cnn:base with ${this.options.extend}`);
+                this.log(`Extending cnn-base with ${this.options.extend}`);
                 this.composeWith(this.options.extend);
             }
 
@@ -254,7 +254,7 @@ module.exports = generators.Base.extend({
 
     end: {
         message: function () {
-            this.log('Finished with cnn:base');
+            this.log('cnn-base completed');
         }
     }
 });
