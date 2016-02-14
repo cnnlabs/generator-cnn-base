@@ -218,6 +218,7 @@ module.exports = generators.Base.extend({
             this.fs.copyTpl(this.templatePath('_nvmrc'), this.destinationPath('.nvmrc'), this.templateModel);
             this.fs.copyTpl(this.templatePath('CHANGELOG.md'), this.destinationPath('CHANGELOG.md'), this.templateModel);
             this.fs.copyTpl(this.templatePath('package.json'), this.destinationPath('package.json'), this.templateModel);
+            this.fs.copyTpl(this.templatePath('README.md'), this.destinationPath('README.md'), this.templateModel);
         },
 
         createRepository: function () {
