@@ -1,0 +1,46 @@
+{
+  "name": "generator-cnn-base",
+  "version": "0.1.0",
+  "description": "CNN Base Package Generator",
+  "main": "",
+  "directories": {
+    "test": "./test"
+  },
+  "files": [
+    "generators/base"
+  ],
+  "scripts": {
+    "generate-authors": "tools/generate-authors.sh",
+    "generate-changelog": "changelog-maker --group",
+    "generate-docs": "rm -rf docs && esdoc -c .esdoc.json",
+    "test": "eslint *.js .*.js **/*.js **/.*.js && test/validate-json-files.sh",
+    "update-apply": "ncu -u",
+    "update-check": "ncu"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cnnlabs/generator-cnn-base.git"
+  },
+  "homepage": "https://github.com/cnnlabs/generator-cnn-base#readme",
+  "engines": {
+    "node": ">=5.6.0"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "changelog-maker": "2.2.0",
+    "esdoc": "0.4.4",
+    "eslint": "2.0.0",
+    "jq-cli-wrapper": "0.3.0",
+    "jsonlint": "1.6.2",
+    "npm-check-updates": "2.5.8"
+  },
+  "keywords": [
+    "cnn",
+    "cnnlabs",
+    "yeoman-generator"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cnnlabs/generator-cnn-base/issues"
+  }
+}
