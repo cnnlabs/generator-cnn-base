@@ -2,7 +2,6 @@
 
 const generators = require('yeoman-generator');
 
-let foregoSomeValidation = false;
 
 /**
  * Validates that a string is a valid POSIX.1-2013 3.92 character string.
@@ -43,42 +42,19 @@ function validateFilename(input) {
 
 
 /**
- * Validates that a string is a valid repositry name for CNN projects.  All CNN
- * projects must start with `cnn-`.
- *
- * @param {?string} input
- * The string to validate.
- *
- * @return {boolean|string}
- * Will either be true, or a string.  If it is a string, validation failed.
- */
-function validateRepositoryName(input) {
-    if (foregoSomeValidation) {
-        return true;
-    }
-
-    let isValidFilename = validateFilename(input);
-
-    if (isValidFilename !== true) {
-        return isValidFilename;
-    }
-
-    return (input.search(/^cnn-/) !== -1) ? true : 'Repository names must start with `cnn-`';
-}
-
-
-/**
  * Validates that a string is a valid url for a repository in the cnnlabs GitHub
  * organization.
  *
  * @param {?string} input
- * The string to validate.
+ * The string to validate.  Should match the following regexp:
+ *
+ * @see https://regex101.com/r/bF0xK5/1
  *
  * @return {boolean|string}
  * Will either be true, or a string.  If it is a string, validation failed.
  */
 function validateRepositoryUrl(input) {
-    return /^https:\/\/github.com\/cnnlabs\/.+\.git$/.test(input) ? true : 'Use the https clone url from the repository that was created.';
+    return /^https:\/\/github.com\/[^\/]+\/.+\.git$/.test(input) ? true : 'Use the https clone url from the repository that was created. Should end with `.git`';
 }
 
 
@@ -100,7 +76,6 @@ module.exports = generators.Base.extend({
     constructor: function () {
         generators.Base.apply(this, arguments);
         this.option('extend');
-        this.option('forego');
     },
 
     initializing: {
@@ -108,10 +83,6 @@ module.exports = generators.Base.extend({
             if (this.options.extend) {
                 this.log(`Extending cnn-base with ${this.options.extend}`);
                 this.composeWith(this.options.extend);
-            }
-
-            if (this.options.forego) {
-                foregoSomeValidation = true;
             }
         }
     },
@@ -127,13 +98,22 @@ module.exports = generators.Base.extend({
                         name: 'repositoryName',
                         message: 'Repository name',
                         default: process.cwd().match(/[^\/]+$/)[0],
-                        validate: validateRepositoryName
+                        validate: validateFilename
+                    },
+                    {
+                        type: 'confirm',
+                        name: 'useGitHub',
+                        message: 'Create a GitHub repository',
+                        default: true
                     },
                     {
                         type: 'input',
                         name: 'githubRepositoryUrl',
-                        message: 'GitHub repository in the cnnlabs organzation url',
-                        validate: validateRepositoryUrl
+                        message: 'GitHub repository url',
+                        validate: validateRepositoryUrl,
+                        when: function (answers) {
+                            return answers.useGitHub;
+                        }
                     },
                     {
                         type: 'input',
