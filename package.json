@@ -30,8 +30,8 @@
   },
   "devDependencies": {
     "changelog-maker": "2.2.0",
-    "esdoc": "0.4.4",
-    "eslint": "2.0.0",
+    "esdoc": "0.4.5",
+    "eslint": "2.2.0",
     "jq-cli-wrapper": "0.3.0",
     "jsonlint": "1.6.2",
     "npm-check-updates": "2.5.8"
