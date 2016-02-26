@@ -1,7 +1,7 @@
 {
   "name": "<%= REPOSITORY_NAME %>",
   "version": "0.1.0",
-  "description": "<%= PROJECT_NAME %>",
+  "description": "<%= PROJECT_DESCRIPTION %>",
   "main": "",
   "directories": {
   },
