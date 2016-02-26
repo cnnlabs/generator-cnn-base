@@ -96,9 +96,33 @@ module.exports = generators.Base.extend({
                     {
                         type: 'input',
                         name: 'repositoryName',
-                        message: 'Repository name',
+                        message: 'Repository name (spaces not allowed)',
                         default: process.cwd().match(/[^\/]+$/)[0],
                         validate: validateFilename
+                    },
+                    {
+                        type: 'input',
+                        name: 'projectName',
+                        message: 'Project name (spaces allowed)',
+                        validate: validateCharacterString
+                    },
+                    {
+                        type: 'input',
+                        name: 'projectDescription',
+                        message: 'Project description',
+                        default: function (answers) {
+                            return answers.projectName;
+                        }
+                    },
+                    {
+                        type: 'list',
+                        name: 'minimumNodeVersion',
+                        message: 'Minimum node version',
+                        default: '5.6.0',
+                        choices: [
+                            '4.3.0',
+                            '5.6.0'
+                        ]
                     },
                     {
                         type: 'confirm',
@@ -117,33 +141,23 @@ module.exports = generators.Base.extend({
                     },
                     {
                         type: 'input',
-                        name: 'projectName',
-                        message: 'Project name',
-                        validate: validateCharacterString
-                    },
-                    {
-                        type: 'list',
-                        name: 'minimumNodeVersion',
-                        message: 'Minimum node version',
-                        default: '5.6.0',
-                        choices: [
-                            '4.3.0',
-                            '5.6.0'
-                        ]
-                    },
-                    {
-                        type: 'input',
                         name: 'gitEmail',
                         message: 'Git email',
                         default: this.user.git.email(),
-                        validate: validateCharacterString
+                        validate: validateCharacterString,
+                        when: function (answers) {
+                            return answers.useGitHub;
+                        }
                     },
                     {
                         type: 'input',
                         name: 'gitName',
                         message: 'Git name',
                         default: this.user.git.name(),
-                        validate: validateCharacterString
+                        validate: validateCharacterString,
+                        when: function (answers) {
+                            return answers.useGitHub;
+                        }
                     }
                 ],
 
@@ -151,6 +165,7 @@ module.exports = generators.Base.extend({
                     // this.githubRepositoryUrl = answers.githubRepositoryUrl;
                     this.minimumNodeVersion = answers.minimumNodeVersion;
                     this.projectName = answers.projectName;
+                    this.projectDescription = answers.projectDescription;
                     this.repositoryName = answers.repositoryName;
                     this.gitName = answers.gitName;
                     this.gitEmail = answers.gitEmail;
@@ -166,6 +181,7 @@ module.exports = generators.Base.extend({
             this.templateModel = {
                 MINIMUM_NODE_VERSION: this.minimumNodeVersion,
                 PROJECT_NAME: this.projectName,
+                PROJECT_DESCRIPTION: this.projectDescription,
                 REPOSITORY_NAME: this.repositoryName
             };
         }
@@ -227,9 +243,7 @@ module.exports = generators.Base.extend({
                 'jq-cli-wrapper',
                 'jsonlint',
                 'npm-check-updates'
-            ], {
-                saveDev: true
-            });
+            ], {saveDev: true});
         }
     },
 
