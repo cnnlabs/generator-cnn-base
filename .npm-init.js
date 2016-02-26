@@ -49,6 +49,10 @@ var pack = package; // eslint-disable-line
         scope = config.get('scope');
 
     let name = pack.name || basename;
+
+    // See GH Issues #5 and #6 in cnn-package-generator for why all of this is
+    // commented out.
+
         // spec = npa(name);
 
     // if (scope) {
