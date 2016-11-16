@@ -23,7 +23,7 @@
   },
   "homepage": "https://github.com/cnnlabs/generator-cnn-base#readme",
   "engines": {
-    "node": ">=5.6.0"
+    "node": ">=6.9.1"
   },
   "dependencies": {
     "yeoman-generator": "0.22.5"
@@ -41,7 +41,7 @@
     "cnnlabs",
     "yeoman-generator"
   ],
-  "license": "MIT",
+  "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/cnnlabs/generator-cnn-base/issues"
   }
