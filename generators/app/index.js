@@ -250,11 +250,14 @@ module.exports = generators.Base.extend({
 
         npmInstall: function () {
             this.npmInstall([
+                'chai',
                 'changelog-maker',
                 'esdoc',
                 'eslint',
+                'istanbul',
                 'jq-cli-wrapper',
                 'jsonlint',
+                'mocha',
                 'npm-check-updates'
             ], {saveDev: true});
         }

@@ -12,14 +12,11 @@ but it is recommended you use the `cnn` CLI available from
 
 ## Install
 
-No install is necessary if you are using this generator with the `cnn` cli.
-
-`yo` can be used to install.  Refer to the `yo`
-[documentation](https://github.com/yeoman/yo#readme) for details.
-
-Can be installed manually.
+`cnn-package-generator` installs the `cnn` cli tool used to run the Yeoman
+generator.
 
 ```shell
+$ npm install --global cnn-package-generator
 $ npm install --global generator-cnn-base
 ```
 
@@ -32,7 +29,7 @@ With `cnn` (**recommended**):
 - See the [README](https://github.com/cnnlabs/cnn-package-generator#readme) in
   the CNN Package Generator repo for more details.
 
-With `yo`:
+With `yo` (** NOT** recommended):
 - `$ yo cnn-base`
 
 
@@ -66,9 +63,6 @@ Extending cnn-base with cnn-generator
 
   - AUTHORS.md
   - CHANGELOG.md
-  - COLLABORATOR_GUIDE.md
-  - CONTRIBUTING.md
-  - GOVERNANCE.md
 
 - Creates a local GIT repository for the project.  Currently the remote
   repository on GitHub will need to be manually created.
@@ -83,11 +77,12 @@ Extending cnn-base with cnn-generator
   - `generate-changelog` - Uses [changelog-maker](https://github.com/rvagg/changelog-maker)
     to generate the CHANGELOG.md.
 
+  - `generate-coverage` - Uses [Istanbul](https://github.com/gotwarlost/istanbul)
+    along with [Mocha](https://mochajs.org/) and [Chai](http://chaijs.com/) to
+    create a code coverage report.  Also opens it up on OS X in a browser.
+
   - `generate-docs` - Uses [ESDoc](https://esdoc.org/) to generate documentation
     in `/docs`.
-
-  - `generate-manpage` - Uses [marked-man](https://github.com/kapouer/marked-man)
-    to create man pages.  Only applies to the cli generator.
 
   - `test` - Uses [ESLint](http://eslint.org/) to validate all .js files and
     uses [jsonlint](https://github.com/zaach/jsonlint) to validates all .json

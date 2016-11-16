@@ -12,6 +12,7 @@
   "scripts": {
     "generate-authors": "tools/generate-authors.sh",
     "generate-changelog": "changelog-maker --group",
+    "generate-coverage": "istanbul cover _mocha -- test/unit -r test/mocha-setup.js && open coverage/lcov-report/index.html",
     "generate-docs": "rm -rf docs && esdoc -c .esdoc.json",
     "test": "eslint . && test/validate-json-files.sh",
     "update-apply": "ncu -u",
