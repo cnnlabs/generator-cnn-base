@@ -1,5 +1,7 @@
 .c9
 .idea
+.ignore
+coverage
 docs
 node_modules
 npm-debug.log
