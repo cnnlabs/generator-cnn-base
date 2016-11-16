@@ -1,3 +1,19 @@
+/*
+ * Copyright 2016 Turner Broadcasting System, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 'use strict';
 
 const generators = require('yeoman-generator');
@@ -203,7 +219,7 @@ module.exports = generators.Base.extend({
             this.fs.copy(this.templatePath('COLLABORATOR_GUIDE.md'), this.destinationPath('COLLABORATOR_GUIDE.md'));
             this.fs.copy(this.templatePath('CONTRIBUTING.md'), this.destinationPath('CONTRIBUTING.md'));
             this.fs.copy(this.templatePath('GOVERNANCE.md'), this.destinationPath('GOVERNANCE.md'));
-            this.fs.copy(this.templatePath('LICENSE'), this.destinationPath('LICENSE'));
+            this.fs.copy(this.templatePath('LICENSE.md'), this.destinationPath('LICENSE.md'));
 
             this.fs.copy(this.templatePath('test/'), this.destinationPath('test/'));
             this.fs.copy(this.templatePath('tools/'), this.destinationPath('tools/'));
