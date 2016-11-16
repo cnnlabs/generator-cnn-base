@@ -26,15 +26,15 @@
     "node": ">=6.9.1"
   },
   "dependencies": {
-    "yeoman-generator": "0.22.5"
+    "yeoman-generator": "0.24.1"
   },
   "devDependencies": {
-    "changelog-maker": "2.2.0",
-    "esdoc": "0.4.5",
-    "eslint": "2.2.0",
+    "changelog-maker": "2.2.4",
+    "esdoc": "0.4.8",
+    "eslint": "3.10.2",
     "jq-cli-wrapper": "0.3.0",
     "jsonlint": "1.6.2",
-    "npm-check-updates": "2.5.8"
+    "npm-check-updates": "2.8.6"
   },
   "keywords": [
     "cnn",
