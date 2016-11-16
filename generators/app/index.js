@@ -216,9 +216,6 @@ module.exports = generators.Base.extend({
             this.fs.copy(this.templatePath('_npmrc'), this.destinationPath('.npmrc'));
 
             this.fs.copy(this.templatePath('AUTHORS.md'), this.destinationPath('AUTHORS.md'));
-            this.fs.copy(this.templatePath('COLLABORATOR_GUIDE.md'), this.destinationPath('COLLABORATOR_GUIDE.md'));
-            this.fs.copy(this.templatePath('CONTRIBUTING.md'), this.destinationPath('CONTRIBUTING.md'));
-            this.fs.copy(this.templatePath('GOVERNANCE.md'), this.destinationPath('GOVERNANCE.md'));
             this.fs.copy(this.templatePath('LICENSE.md'), this.destinationPath('LICENSE.md'));
 
             this.fs.copy(this.templatePath('test/'), this.destinationPath('test/'));
