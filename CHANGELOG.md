@@ -1,5 +1,33 @@
 # CNN Base Package Generator Changelog
 
+
+## 2016-11-16, Version 0.4.0, @jamsyoung
+
+### Notable changes
+
+- Updated all files to the most current version
+- Updated dependencies to the most current version that doesn't break things
+- Updated documentation
+
+
+### Known issues
+
+See https://github.com/cnnlabs/generator-cnn-base/labels/defect for complete and
+current list of known issues.
+
+
+### Commits
+
+* [[`868239d1f2`](https://github.com/cnnlabs/generator-cnn-base/commit/868239d1f2)] - **(SEMVER-MINOR)** **core**: The long needed update (#13) (Jamie Young) 
+* [[`b9adf61533`](https://github.com/cnnlabs/generator-cnn-base/commit/b9adf61533)] - **(SEMVER-MINOR)** **core**: general cleanup around prompts (James Young) [#11](https://github.com/cnnlabs/generator-cnn-base/pull/11)
+* [[`f4964e5732`](https://github.com/cnnlabs/generator-cnn-base/commit/f4964e5732)] - **(SEMVER-MINOR)** **generator**: added istanbul, mocha, and chai to base generator (Jamie Young) 
+* [[`542b59ced8`](https://github.com/cnnlabs/generator-cnn-base/commit/542b59ced8)] - **deps**: update dependencies (James Young) 
+* [[`d9c6d7b14a`](https://github.com/cnnlabs/generator-cnn-base/commit/d9c6d7b14a)] - **docs**: update README (James Young) 
+* [[`763264f66b`](https://github.com/cnnlabs/generator-cnn-base/commit/763264f66b)] - **generator**: remove references to deleted files (Jamie Young) 
+
+
+
+
 ## 2016-02-23, Version 0.3.0, @jamsyoung
 
 ### Notable changes
