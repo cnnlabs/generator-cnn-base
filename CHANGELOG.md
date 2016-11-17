@@ -1,6 +1,27 @@
 # CNN Base Package Generator Changelog
 
 
+## 2016-11-16, Version 0.5.0, @jamsyoung
+
+### Notable changes
+
+- Updated dependencies
+
+
+### Known issues
+
+See https://github.com/cnnlabs/generator-cnn-base/labels/defect for complete and
+current list of known issues.
+
+
+### Commits
+
+* [[`c3d7c87814`](https://github.com/cnnlabs/generator-cnn-base/commit/c3d7c87814)] - **deps**: update dependencies (Jamie Young) 
+
+
+
+
+
 ## 2016-11-16, Version 0.4.0, @jamsyoung
 
 ### Notable changes
