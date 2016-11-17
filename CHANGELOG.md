@@ -1,5 +1,23 @@
 # CNN Base Package Generator Changelog
 
+## 2016-11-17, Version 0.6.0, @jamsyoung
+
+### Notable changes
+
+- Reverted a dependency that was causing problems.
+
+
+### Known issues
+
+See https://github.com/cnnlabs/generator-cnn-base/labels/defect for complete and
+current list of known issues.
+
+
+### Commits
+
+* [[`0dbff72020`](https://github.com/cnnlabs/generator-cnn-base/commit/0dbff72020)] - **deps**: lower yeoman-generator version (James Young)
+
+
 
 ## 2016-11-16, Version 0.5.0, @jamsyoung
 
