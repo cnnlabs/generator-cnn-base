@@ -1,5 +1,26 @@
 # CNN Base Package Generator Changelog
 
+
+## 2016-11-23, Version 0.7.0, @jamsyoung
+
+### Notable changes
+
+- updated generate-authors.sh file in the template
+
+
+### Known issues
+
+See https://github.com/cnnlabs/generator-cnn-base/labels/defect for complete and
+current list of known issues.
+
+
+### Commits
+
+* [[`f5dc334148`](https://github.com/cnnlabs/generator-cnn-base/commit/f5dc334148)] - update generate-authors.sh file to current version (James Young)
+
+
+
+
 ## 2016-11-17, Version 0.6.0, @jamsyoung
 
 ### Notable changes
