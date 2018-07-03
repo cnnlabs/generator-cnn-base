@@ -16,7 +16,9 @@
     "generate-docs": "rm -rf docs && esdoc -c .esdoc.json",
     "test": "eslint . && test/validate-json-files.sh",
     "update-apply": "ncu -u",
-    "update-check": "ncu"
+    "update-check": "ncu",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -27,7 +29,8 @@
     "node": ">=6.9.1"
   },
   "dependencies": {
-    "yeoman-generator": "0.21.2"
+    "yeoman-generator": "0.23.0",
+    "snyk": "^1.88.0"
   },
   "devDependencies": {
     "changelog-maker": "2.2.4",
@@ -45,5 +48,6 @@
   "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/cnnlabs/generator-cnn-base/issues"
-  }
+  },
+  "snyk": true
 }
