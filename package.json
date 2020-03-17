@@ -27,7 +27,7 @@
     "node": ">=6.9.1"
   },
   "dependencies": {
-    "yeoman-generator": "0.21.2"
+    "yeoman-generator": "2.0.0"
   },
   "devDependencies": {
     "changelog-maker": "2.2.4",
